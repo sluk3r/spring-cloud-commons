@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
  * @author Spencer Gibb
  */
 @Configuration
-@Import(AutoServiceRegistrationConfiguration.class)
+@Import(AutoServiceRegistrationConfiguration.class) //wxc pro 2018-3-15:16:18:36 这个应该是像SpringXML里的import一样
 @ConditionalOnProperty(value = "spring.cloud.service-registry.auto-registration.enabled", matchIfMissing = true)
 public class AutoServiceRegistrationAutoConfiguration {
 

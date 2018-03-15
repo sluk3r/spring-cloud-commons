@@ -17,3 +17,7 @@ org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConf
 # Environment Post Processors
 org.springframework.boot.env.EnvironmentPostProcessor=\
 org.springframework.cloud.client.HostInfoEnvironmentPostProcessor
+
+
+#这个方式不错， 可以方便地指定Factory， 到时每一个Factory背后对应一个 2018-3-15 16:21:36
+#挑着看了下具体的类定义， 不是Factory

@@ -30,8 +30,8 @@ import org.springframework.context.ApplicationContextAware;
 /**
  * @author Spencer Gibb
  */
-@Endpoint(id = "features")
-public class FeaturesEndpoint
+@Endpoint(id = "features")  //wxc pro 2018-3-15:16:07:36 这个Endpoint， 怎么理解？ 是boot里定义的，
+public class FeaturesEndpoint //wxc pro 2018-3-15:16:26:36 把Feature通过Endpoint的方式发布出来？
 		implements ApplicationContextAware {
 
 	private final List<HasFeatures> hasFeaturesList;
@@ -46,7 +46,7 @@ public class FeaturesEndpoint
 		this.context = context;
 	}
 
-	@ReadOperation
+	@ReadOperation //wxc pro 2018-3-15:16:23:10 这个ReadOperation会有什么限制？是想表达什么限制？
 	public Features features() {
 		Features features = new Features();
 
@@ -89,6 +89,7 @@ public class FeaturesEndpoint
 						type.getPackage().getImplementationVendor()));
 	}
 
+	//wxc 2018-3-15:16:27:57 这种定义方式不错， 可以借鉴， 不是简单地把Feature放到一个List里， 而是充分使用了Model的理念
 	static class Features {
 		final List<Feature> enabled = new ArrayList<>();
 		final List<String> disabled = new ArrayList<>();
@@ -102,7 +103,7 @@ public class FeaturesEndpoint
 		}
 	}
 
-	
+	//wxc pro 2018-3-15:16:24:51 是Spring Cloud用来支撑自身版本的？还是想表达Spring Cloud里提供的服务接口版本？貌似是最后一个。
 	static class Feature {
 		final String type;
 		final String name;

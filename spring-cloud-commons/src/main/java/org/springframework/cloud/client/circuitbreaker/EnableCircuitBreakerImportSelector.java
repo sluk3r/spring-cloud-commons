@@ -24,8 +24,8 @@ import org.springframework.core.annotation.Order;
  * Import a single circuit breaker implementation Configuration
  * @author Spencer Gibb
  */
-@Order(Ordered.LOWEST_PRECEDENCE - 100)
-public class EnableCircuitBreakerImportSelector extends
+@Order(Ordered.LOWEST_PRECEDENCE - 100)  //wxc 2018-3-15:17:42:18 还是使用了Spring自身的类。  另一方面这个Order是想解决什么问题？
+public class EnableCircuitBreakerImportSelector extends  //wxc pro 2018-3-15:17:43:17 这个EnableCircuitBreakerImportSelector什么场景下使用？
 		SpringFactoryImportSelector<EnableCircuitBreaker> {
 
 	@Override

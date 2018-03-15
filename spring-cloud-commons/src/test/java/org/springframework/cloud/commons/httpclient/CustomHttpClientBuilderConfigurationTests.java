@@ -33,7 +33,7 @@ import static org.junit.Assert.assertTrue;
  * @author Ryan Baxter
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = CustomHttpClientBuilderApplication.class)
+@SpringBootTest(classes = CustomHttpClientBuilderApplication.class) //wxc 2018-2-27:21:24:03 这个SpringBootTest第一次见
 public class CustomHttpClientBuilderConfigurationTests {
 
 	@Autowired

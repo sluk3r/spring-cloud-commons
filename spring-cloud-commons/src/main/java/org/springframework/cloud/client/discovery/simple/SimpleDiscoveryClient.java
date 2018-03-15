@@ -39,6 +39,7 @@ public class SimpleDiscoveryClient implements DiscoveryClient {
 	}
 
 	@Override
+	//wxc 2018-3-15:17:48:09 重新创建一个新的ArrayList
 	public List<String> getServices() {
 		return new ArrayList<>(this.simpleDiscoveryProperties.getInstances().keySet());
 	}

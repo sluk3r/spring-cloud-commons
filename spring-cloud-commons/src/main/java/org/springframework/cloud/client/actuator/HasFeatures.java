@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Spencer Gibb
  */
-public class HasFeatures {
+public class HasFeatures { //wxc pro 2018-3-15:17:39:13 这里的Has怎么理解？
 
 	private final List<Class<?>> abstractFeatures = new ArrayList<>();
 

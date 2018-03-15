@@ -26,8 +26,11 @@ public class FeaturesEndpointTests {
 	@Before
 	public void setup() {
 		this.context = new AnnotationConfigApplicationContext();
-		this.context.register(JacksonAutoConfiguration.class, FeaturesConfig.class,
-				Config.class);
+		this.context.register(
+				JacksonAutoConfiguration.class, //wxc pro 2018-3-15:17:33:50 如果不加这个JacksonAutoConfiguration配置的话， 会有什么问题？
+				FeaturesConfig.class,
+				Config.class
+		);
 		this.context.refresh();
 	}
 
@@ -71,7 +74,7 @@ public class FeaturesEndpointTests {
 	}
 
 	@Configuration
-	@EnableConfigurationProperties
+	@EnableConfigurationProperties //wxc pro 2018-3-15:17:35:43  EnableConfigurationProperties，加与不加有什么区别？看来， 为了看Spring Cloud的源码， 需要对Spring的使用要比较熟练地了解下， 或者说是Spring Boot
 	public static class Config {
 		@Autowired(required = false)
 		private List<HasFeatures> hasFeatures = new ArrayList<>();
