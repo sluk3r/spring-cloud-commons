@@ -35,7 +35,7 @@ import org.springframework.core.Ordered;
 public class DiscoveryClientHealthIndicator implements DiscoveryHealthIndicator, Ordered,
 		ApplicationListener<InstanceRegisteredEvent<?>> {
 
-	private AtomicBoolean discoveryInitialized = new AtomicBoolean(false);
+	private AtomicBoolean discoveryInitialized = new AtomicBoolean(false);  //wxc 2018-3-17:11:09:41 这个discoveryInitialized具体怎么解？
 
 	private int order = Ordered.HIGHEST_PRECEDENCE;
 
@@ -74,7 +74,7 @@ public class DiscoveryClientHealthIndicator implements DiscoveryHealthIndicator,
 			}
 			catch (Exception e) {
 				log.error("Error", e);
-				builder.down(e);
+				builder.down(e); //wxc 2018-3-17:11:08:52 这种方式不错， 收集运行时状态和可能的异常
 			}
 		}
 		else {

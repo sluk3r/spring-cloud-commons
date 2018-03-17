@@ -35,7 +35,7 @@ public class HeartbeatMonitor {
 	public boolean update(Object value) {
 		Object last = this.latestHeartbeat.get();
 		if (value != null && !value.equals(last)) {
-			return this.latestHeartbeat.compareAndSet(last, value);
+			return this.latestHeartbeat.compareAndSet(last, value);  //wxc pro 2018-3-17:11:05:17 只是保存了最新的HeartBeat事件？没有实际的逻辑？
 		}
 		return false;
 	}

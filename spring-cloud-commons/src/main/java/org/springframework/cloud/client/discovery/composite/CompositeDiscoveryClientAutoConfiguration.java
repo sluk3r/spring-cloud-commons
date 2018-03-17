@@ -17,6 +17,7 @@ import java.util.List;
 
 @Configuration
 @AutoConfigureBefore(SimpleDiscoveryClientAutoConfiguration.class)
+//wxc 2018-3-17:10:55:23 使用这种方式不错， 不再使用XML地达到Factory的作用。
 public class CompositeDiscoveryClientAutoConfiguration {
 	
 	@Bean

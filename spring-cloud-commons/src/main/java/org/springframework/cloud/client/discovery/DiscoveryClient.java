@@ -25,7 +25,7 @@ import org.springframework.cloud.client.ServiceInstance;
  * Netflix Eureka or consul.io
  * @author Spencer Gibb
  */
-public interface DiscoveryClient {
+public interface DiscoveryClient {  //wxc pro 2018-3-17:11:14:20 这个Client表示什么意思？ 是表示Discovery的？ 也就是通过这个Client来Discovery某些Service。
 
 	/**
 	 * A human readable description of the implementation, used in HealthIndicator

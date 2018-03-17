@@ -16,5 +16,5 @@ import java.lang.annotation.*;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-public @interface SpringCloudApplication {
+public @interface SpringCloudApplication { //wxc pro 2018-3-16:8:45:35 这个App的范围是怎样的？ App之间怎么通信？
 }

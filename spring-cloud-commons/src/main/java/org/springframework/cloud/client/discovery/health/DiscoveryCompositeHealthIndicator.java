@@ -35,7 +35,7 @@ public class DiscoveryCompositeHealthIndicator extends CompositeHealthIndicator 
 
 	private final ArrayList<Holder> healthIndicators = new ArrayList<>();
 
-	@Autowired
+	@Autowired //wxc 2018-3-17:11:13:20 放到构造方法上， 表示自动创建？
 	public DiscoveryCompositeHealthIndicator(HealthAggregator healthAggregator,
 			List<DiscoveryHealthIndicator> indicators) {
 		super(healthAggregator);

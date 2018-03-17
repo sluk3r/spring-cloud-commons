@@ -23,7 +23,7 @@ import java.util.Map;
  * Represents an instance of a Service in a Discovery System
  * @author Spencer Gibb
  */
-public interface ServiceInstance {
+public interface ServiceInstance {  //wxc pro 2018-3-16:8:44:15 貌似只是Service元数据层面的描述， 没有看到期望中的Start和stop这样跟Service紧密相关的接口方法。
 
 	/**
 	 * @return the service id as registered.
@@ -60,5 +60,5 @@ public interface ServiceInstance {
 	 */
 	default String getScheme() {
 		return null;
-	}
+	}  //wxc pro 2018-3-16:8:43:24 Service的Scheme怎么理解？
 }
