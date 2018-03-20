@@ -31,5 +31,5 @@ public interface ApacheHttpClientFactory {
 	 * Creates an {@link HttpClientBuilder} that can be used to create a new {@link CloseableHttpClient}.
 	 * @return A {@link HttpClientBuilder}
 	 */
-	public HttpClientBuilder createBuilder();
+	public HttpClientBuilder createBuilder(); //wxc pro 2018-3-17:11:43:00 这个生成的结果跟Docs里提到了CloseableHttpClient有什么关系？是子接口（或子类）？HttpClientBuilder是Apache的实现
 }

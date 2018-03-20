@@ -38,9 +38,10 @@ public class DefaultApacheHttpClientConnectionManagerFactory
 	}
 
 	@Override
+	//wxc pro 2018-3-17:11:48:56 Client和Connectio的关系?Client是配置信息的封装是一个静态概念, 而connection是动态概念. 是client创建出来的(也就是说Client是connection的Factory).这里Manager具体Manage了什么?业务概念接口梳理后,先在调用机制上使用接口方式编程, 后续具体使用什么样的接口实现, 通过Factory来解决. 这样,设计模式没有多少高大尚的。另一方面由于大师基于理念把设计问题及对应的方案归纳时， 已经是嚼碎的内容， 使用者如果不整体把握和理解的话，从已嚼碎的内容里， 反向还原出设计理念、问题和设计过程。这个过程，不单单是设计模式， 其它的框架性设计也是类似的问题与思路。
 	public HttpClientConnectionManager newConnectionManager(boolean disableSslValidation,
 			int maxTotalConnections, int maxConnectionsPerRoute, long timeToLive,
-			TimeUnit timeUnit, RegistryBuilder registryBuilder) {
+			TimeUnit timeUnit, RegistryBuilder registryBuilder) { //wxc 2018-3-17:12:01:17 RegistryBuilder是Apache自己的一个实现类。
 		if (registryBuilder == null) {
 			registryBuilder = RegistryBuilder.<ConnectionSocketFactory> create()
 					.register(HTTP_SCHEME, PlainConnectionSocketFactory.INSTANCE);

@@ -20,7 +20,7 @@ public class DefaultApacheHttpClientFactory implements ApacheHttpClientFactory {
 	 */
 	@Override
 	public HttpClientBuilder createBuilder() {
-		return this.builder.disableContentCompression()
-				.disableCookieManagement().useSystemProperties();
+		return this.builder.disableContentCompression() //wxc 2018-3-17:11:46:13 这种方式不错， 充分体现了Builder的意图。
+				.disableCookieManagement().useSystemProperties(); //wxc pro 2018-3-17:11:47:08 这个具体在哪配置？
 	}
 }
